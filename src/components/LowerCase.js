@@ -3,7 +3,7 @@ import  { useState } from 'react';
 
 
 
-export default function UpperCase(props) {
+export default function LowerCase(props) {
     const handleUpClick=()=>{
         console.log("Lower Case was Clicked" +text)
         let newText=text.toLowerCase()
