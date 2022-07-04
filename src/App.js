@@ -15,7 +15,7 @@ function App() {
   <Navbar title="TextUtils " about="About Us" />
     <div className='container my-3'>
     
-      <UpperCase heading="Enter your text here to Convert in Upper Case" placeholder="Enter your Text Here"></UpperCase>
+      <UpperCase heading="Enter your text here " placeholder="Enter your Text Here"></UpperCase>
     </div>
 
 
