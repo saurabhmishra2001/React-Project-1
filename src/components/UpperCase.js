@@ -8,13 +8,26 @@ export default function UpperCase(props) {
         console.log("Lower Case was Clicked" +text)
         let newText=text.toUpperCase()
         setText(newText)
-        }
+    }
+
+
+    const handleClearClick=()=>{
+        console.log("Clear was Clicked")
+        setText("")
+    }
+
+    const handleCopyClick=()=>{
+        console.log("Copy was Clicked")
+        navigator.clipboard.writeText(text)
+    }
+
 
     const handleLowClick=()=>{
         console.log("Lower Case was Clicked" +text)
         let newText=text.toLowerCase()
         setText(newText)        
-        }
+    }
+
     const handleOnChange=(event)=>{
         console.log("onChange was Clicked")
         setText(event.target.value)
@@ -30,7 +43,11 @@ export default function UpperCase(props) {
         <textarea className="form-control" id="myBox" rows="8" value={text} onChange={handleOnChange}></textarea>
         </div>
         <button className="btn btn-outline-primary my-2 my-sm-0 mx-3" onClick={handleUpClick} type="submit">Convert to Upper Case</button>
-        <button className="btn btn-outline-primary my-5 my-sm-0 mx 3" onClick={handleLowClick} type="submit">Convert to Lower Case</button>
+        <button className="btn btn-outline-primary my-2 my-sm-0 mx 3" onClick={handleLowClick} type="submit">Convert to Lower Case</button>
+        <button className="btn btn-outline-primary my-2 my-sm-0 mx-3" onClick={handleClearClick} type="submit">Clear Text</button>
+        <button className="btn btn-outline-primary my-2 my-sm-0 mx-3" onClick={handleCopyClick} type="submit">Copy Text</button>
+        
+        
 
   </div>
   <div className='container my-3'>
