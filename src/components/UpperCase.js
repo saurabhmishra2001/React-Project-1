@@ -32,6 +32,18 @@ export default function UpperCase(props) {
         console.log("onChange was Clicked")
         setText(event.target.value)
     }
+    const handleCaptClick=()=>{
+        console.log("Captalize was Clicked")
+        let newText=text.charAt(" ").toUpperCase()+text.slice(1)
+        //let newText2=text.split.charAt(0).toUpperCase()+text.slice(1)
+
+        setText(newText)
+
+    }
+
+        
+
+  
 
     const [text, setText] = useState(props.placeholder);
   return (
@@ -46,6 +58,7 @@ export default function UpperCase(props) {
         <button className="btn btn-outline-primary my-2 my-sm-0 mx 3" onClick={handleLowClick} type="submit">Convert to Lower Case</button>
         <button className="btn btn-outline-primary my-2 my-sm-0 mx-3" onClick={handleClearClick} type="submit">Clear Text</button>
         <button className="btn btn-outline-primary my-2 my-sm-0 mx-3" onClick={handleCopyClick} type="submit">Copy Text</button>
+        <button className="btn btn-outline-primary my-2 my-sm-0 mx-3" onClick={handleCaptClick} type="submit">Click to Manage  Text</button>
         
         
 
