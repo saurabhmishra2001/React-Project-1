@@ -35,16 +35,18 @@ export default function UpperCase(props) {
     const handleCaptClick=()=>{
         console.log("Captalize was Clicked")
         let newText=text.charAt(" ").toUpperCase()+text.slice(1)
-        //let newText2=text.split.charAt(0).toUpperCase()+text.slice(1)
-
         setText(newText)
+      }
 
-    }
+
+      const handleSpaceRemoveClick=()=>{
+        console.log(" Space Remove was Clicked")
+        let newText=text.replace(/\s+/g, " ")
+      
+        setText(newText)
+      }
 
         
-
-  
-
     const [text, setText] = useState(props.placeholder);
   return (
     <>
@@ -59,6 +61,7 @@ export default function UpperCase(props) {
         <button className="btn btn-outline-primary my-2 my-sm-0 mx-3" onClick={handleClearClick} type="submit">Clear Text</button>
         <button className="btn btn-outline-primary my-2 my-sm-0 mx-3" onClick={handleCopyClick} type="submit">Copy Text</button>
         <button className="btn btn-outline-primary my-2 my-sm-0 mx-3" onClick={handleCaptClick} type="submit">Click to Manage  Text</button>
+        <button className="btn btn-outline-primary my-2 my-sm-0 mx-3" onClick={handleSpaceRemoveClick} type="submit"> Remove Space </button>
         
         
 
@@ -70,6 +73,7 @@ export default function UpperCase(props) {
     <h2>Preview</h2>
     <p>{text}</p>
     <p></p>
+
 
   </div>
   </>
