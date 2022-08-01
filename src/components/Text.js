@@ -1,16 +1,13 @@
 import React from 'react'
 import  { useState } from 'react';
 
-
-
-export default function UpperCase(props) {
+export default function Text(props) {
     const handleUpClick=()=>{
         console.log("Lower Case was Clicked" +text)
         let newText=text.toUpperCase()
         setText(newText)
     }
-
-
+    
     const handleClearClick=()=>{
         console.log("Clear was Clicked")
         setText("")
@@ -20,8 +17,7 @@ export default function UpperCase(props) {
         console.log("Copy was Clicked")
         navigator.clipboard.writeText(text)
     }
-
-
+    
     const handleLowClick=()=>{
         console.log("Lower Case was Clicked" +text)
         let newText=text.toLowerCase()
@@ -38,17 +34,15 @@ export default function UpperCase(props) {
         setText(newText)
       }
 
-
-      const handleSpaceRemoveClick=()=>{
+    const handleSpaceRemoveClick=()=>{
         console.log(" Space Remove was Clicked")
         let newText=text.replace(/\s+/g, " ")
-      
         setText(newText)
-      }
+    }
 
         
     const [text, setText] = useState(props.placeholder);
-  return (
+    return (
     <>
     <div className='container'>
         <h1>{props.heading}</h1>
@@ -63,9 +57,7 @@ export default function UpperCase(props) {
         <button className="btn btn-outline-primary my-2 my-sm-0 mx-3" onClick={handleCaptClick} type="submit">Click to Manage  Text</button>
         <button className="btn btn-outline-primary my-2 my-sm-0 mx-3" onClick={handleSpaceRemoveClick} type="submit"> Remove Space </button>
         
-        
-
-  </div>
+    </div>
   <div className='container my-3'>
     <h1>Your Text Summary</h1>
     <p>{text.split(" ").length}  Words and {text.length} Characters </p>
